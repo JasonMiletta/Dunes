@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour {
     public float hoverForce = 65f;
     public float hoverHeight = 3.5f;
 	public float uprightTorque = 5f;
+    public float boostPower = 2.0f;
 	#endregion
 
 	#region STATE
@@ -37,13 +38,19 @@ public class PlayerController : MonoBehaviour {
 
 		rotationalCorrectionUpdate(didHit, hit);
 		hoverUpdate(didHit, hit);
+        movementUpdate();
 
+    }
+    private void movementUpdate(){
+        float boostMultiplier = 1.0f;
+        if(Input.GetAxis("Sprint") > 0){
+            boostMultiplier = boostPower;
+        }
 		//Forward Acceleration
-        rigidBody.AddRelativeForce(0f, 0f, powerInput * speed);
+        rigidBody.AddRelativeForce(0f, 0f, powerInput * speed * boostMultiplier);
 
 		//Rotation Acceleration
         rigidBody.AddRelativeTorque(0f, turnInput * turnSpeed, 0f);
-
     }
 
 	private void hoverUpdate(bool didHit, RaycastHit hit){
