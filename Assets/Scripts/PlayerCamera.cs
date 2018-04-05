@@ -25,13 +25,11 @@ public class PlayerCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        Vector3 targetPosition = (trackedObject.transform.localPosition + offsetVector3);
-        //transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
-		//
-		//transform.LookAt(trackedObject.transform, Vector3.up);
+        Vector3 targetPosition = (trackedObject.transform.position + offsetVector3);
+		Debug.Log(trackedObject.transform.position);
+		Debug.Log(targetPosition);
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
 
-		//Quaternion lookRotation = Quaternion.LookRotation(trackedObject.transform.position - transform.position, transform.up);
-		//transform.rotation = Quaternion.Lerp(transform.rotation, trackedObject.transform.rotation, smoothTime);
-		//transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+		transform.LookAt(trackedObject.transform, Vector3.up);
 	}
 }
