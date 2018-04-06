@@ -1,0 +1,161 @@
+fileFormatVersion: 2
+guid: c8bcf233667cef3438180816acfa118f
+timeCreated: 1522882823
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: air_vent_30
+    100002: air_vent_31
+    100004: detail_windowSmall_36
+    100006: engine_large_22
+    100008: glass_low_24
+    100010: //RootNode
+    100012: plane_rudder_32
+    400000: air_vent_30
+    400002: air_vent_31
+    400004: detail_windowSmall_36
+    400006: engine_large_22
+    400008: glass_low_24
+    400010: //RootNode
+    400012: plane_rudder_32
+    2100000: air_vent_30Mat
+    2100002: air_vent_31Mat
+    2100004: detail_windowSmall_36Mat
+    2100006: engine_large_22Mat
+    2100008: glass_low_24Mat
+    2100010: plane_rudder_32Mat
+    2300000: air_vent_30
+    2300002: air_vent_31
+    2300004: detail_windowSmall_36
+    2300006: engine_large_22
+    2300008: glass_low_24
+    2300010: plane_rudder_32
+    3300000: air_vent_30
+    3300002: air_vent_31
+    3300004: detail_windowSmall_36
+    3300006: engine_large_22
+    3300008: glass_low_24
+    3300010: plane_rudder_32
+    4300000: air_vent_30
+    4300002: air_vent_31
+    4300004: detail_windowSmall_36
+    4300006: engine_large_22
+    4300008: glass_low_24
+    4300010: plane_rudder_32
+    6400000: air_vent_30
+    6400002: air_vent_31
+    6400004: detail_windowSmall_36
+    6400006: engine_large_22
+    6400008: glass_low_24
+    6400010: plane_rudder_32
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: air_vent_30Mat
+    second: {fileID: 2100000, guid: a64ed9a25937db244804b05b2362ecc6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: air_vent_31Mat
+    second: {fileID: 2100000, guid: 922443aa2ac33f04b9fceaadb214c1e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: detail_windowSmall_36Mat
+    second: {fileID: 2100000, guid: e3d6878ac1306394aad2cf9b22b3744f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: engine_large_22Mat
+    second: {fileID: 2100000, guid: 11f06ec66362d764183c1a83ac92f10e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass_low_24Mat
+    second: {fileID: 2100000, guid: fc5db4b3cd3a84c4c890281e4818e550, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plane_rudder_32Mat
+    second: {fileID: 2100000, guid: 7008b7cb6754e3d4a81bf7260f45c599, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
