@@ -23,7 +23,7 @@ public class PlayerCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        Vector3 targetPosition = (trackedObject.transform.localPosition - offsetVector);
+        Vector3 targetPosition = (trackedObject.transform.localPosition + offsetVector);
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
 
 		transform.LookAt(trackedObject.transform, Vector3.up);
