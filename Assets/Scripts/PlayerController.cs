@@ -19,11 +19,6 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody rigidBody;
 	#endregion
 
-    #region COMPONENTS
-    public GameObject frontThruster;
-    public GameObject backThruster;
-    #endregion
-
     void OnDrawGizmos(){
     }
 
