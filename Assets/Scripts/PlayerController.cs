@@ -19,6 +19,14 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody rigidBody;
 	#endregion
 
+    #region COMPONENTS
+    public GameObject frontThruster;
+    public GameObject backThruster;
+    #endregion
+
+    void OnDrawGizmos(){
+    }
+
     void Awake () 
     {
         rigidBody = GetComponent <Rigidbody>();
@@ -37,7 +45,6 @@ public class PlayerController : MonoBehaviour {
 		bool didHit = Physics.Raycast(ray, out hit, hoverHeight);
 
 		rotationalCorrectionUpdate(didHit, hit);
-		hoverUpdate(didHit, hit);
         movementUpdate();
 
     }
@@ -52,14 +59,6 @@ public class PlayerController : MonoBehaviour {
 		//Rotation Acceleration
         rigidBody.AddRelativeTorque(0f, turnInput * turnSpeed, 0f);
     }
-
-	private void hoverUpdate(bool didHit, RaycastHit hit){
-		if(didHit){
-            float proportionalHeight = (hoverHeight - hit.distance) / hoverHeight;
-            Vector3 appliedHoverForce = Vector3.up * proportionalHeight * hoverForce;
-            rigidBody.AddForce(appliedHoverForce, ForceMode.Acceleration);
-		}
-	}
 
 	private void rotationalCorrectionUpdate(bool didHit, RaycastHit hit){
 		Vector3 floorNormal = Vector3.up;
