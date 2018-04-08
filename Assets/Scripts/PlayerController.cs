@@ -7,8 +7,6 @@ public class PlayerController : MonoBehaviour {
 	#region PARAMETERS
 	public float speed = 90f;
     public float turnSpeed = 5f;
-    public float hoverForce = 65f;
-    public float hoverHeight = 3.5f;
 	public float uprightTorque = 5f;
     public float boostPower = 2.0f;
 	#endregion
@@ -37,7 +35,7 @@ public class PlayerController : MonoBehaviour {
     {   
 		Ray ray = new Ray (transform.position, Vector3.down);
         RaycastHit hit;
-		bool didHit = Physics.Raycast(ray, out hit, hoverHeight);
+		bool didHit = Physics.Raycast(ray, out hit);
 
 		rotationalCorrectionUpdate(didHit, hit);
         movementUpdate();
