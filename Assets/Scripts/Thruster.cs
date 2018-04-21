@@ -20,6 +20,7 @@ public class Thruster : MonoBehaviour {
         foreach(Ray r in raysToDraw){
             Gizmos.DrawRay(r);
         }
+		raysToDraw = new List<Ray>();
     }
 
 	// Use this for initialization
