@@ -39,7 +39,6 @@ public class PlayerController : MonoBehaviour {
 
 		rotationalCorrectionUpdate(didHit, hit);
         movementUpdate();
-
     }
     private void movementUpdate(){
         float boostMultiplier = 1.0f;

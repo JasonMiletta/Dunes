@@ -7,7 +7,6 @@ public class ParticleSystem_DustTrail : MonoBehaviour {
 	#region COMPONENTS
 	
 	public ParticleSystem ParticleSystem;
-	public GameObject ParentObject;
 	#endregion
 	
 	#region PARAMETERS
@@ -17,9 +16,6 @@ public class ParticleSystem_DustTrail : MonoBehaviour {
 	void Start () {
 		if(ParticleSystem == null){
 			Debug.LogWarning("ParticleSystem_DustTrail is missing its particleSystem");
-		}
-		if(ParentObject == null){
-			Debug.LogWarning("ParticleSystem_DustTrail is missing its ParentObject");
 		}
 	}
 	
@@ -34,10 +30,10 @@ public class ParticleSystem_DustTrail : MonoBehaviour {
 			ParticleSystem.transform.position = groundPosition;
 
 			//Increase the emission rate based on the size of the parent object
-			Rigidbody parentRigidBody = ParentObject.GetComponent<Rigidbody>();
+			Rigidbody parentRigidBody = GetComponentInParent<Rigidbody>();
 			if(parentRigidBody != null){
 				float speedMagnitude = parentRigidBody.velocity.magnitude;
-
+				Debug.Log(speedMagnitude);
 				var emission = ParticleSystem.emission;
 				emission.rateOverTime = speedMagnitude * emissionRatePerSpeedFactor;
 			}
@@ -46,11 +42,11 @@ public class ParticleSystem_DustTrail : MonoBehaviour {
 
 
 	private Vector3? getClosestSurfacePosition(){
-		Ray ray = new Ray (ParentObject.transform.position, Vector3.down);
+		Ray ray = new Ray (transform.position, Vector3.down);
         RaycastHit hit;
 		bool didHit = Physics.Raycast(ray, out hit);
 		if(didHit){
-			return hit.transform.position;
+			return hit.point;
 		}
 		return null;
 	}
