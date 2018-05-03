@@ -6,6 +6,7 @@ public class PlayerCamera : MonoBehaviour {
 
 	#region COMPONENTS
 	public GameObject trackedObject;
+	private Camera camera;
 	#endregion
 
 	#region PARAMETERS
@@ -14,6 +15,7 @@ public class PlayerCamera : MonoBehaviour {
 	public const float cameraResetTime = 2.0f;
 	public float rotationSmoothTime = 5.0f;
 	public float lookSpeed = 100.0f;
+	public float maxCameraFov = 90.0f;
 	#endregion
 
 	#region STATE
@@ -21,6 +23,8 @@ public class PlayerCamera : MonoBehaviour {
 	private float timeSinceLastCameraMovement = 0f;
 	private float currentLookAngle = 0f;
 	private Vector3 targetPosition;
+	private float originalCameraFov;
+	private float currentCameraFov;
 	#endregion
 
 
@@ -36,10 +40,17 @@ public class PlayerCamera : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		camera = GetComponent<Camera>();
+		if(camera == null){
+			Debug.LogWarning("PlayerCamera can't find a Camera object!");
+		} else {
+			originalCameraFov = camera.fieldOfView;
+		}
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+		visualizeSpeed();
 		Vector3 targetPosition = trackedObject.transform.position;
 
 		//GET UP
@@ -92,6 +103,18 @@ public class PlayerCamera : MonoBehaviour {
 				//transform.RotateAround(trackedObject.transform.position, Vector3.up, mouseX);
 				timeSinceLastCameraMovement = cameraResetTime;
 			}
+		}
+	}
+
+	void visualizeSpeed(){
+		Rigidbody trackedObjectRigidBody = trackedObject.GetComponent<Rigidbody>();
+		if(trackedObjectRigidBody != null){
+			float speedMagnitude = trackedObjectRigidBody.velocity.magnitude;
+			currentCameraFov = originalCameraFov + (speedMagnitude);
+			if(currentCameraFov > maxCameraFov){
+				currentCameraFov = maxCameraFov;
+			}
+			camera.fieldOfView = currentCameraFov;
 		}
 	}
 }
