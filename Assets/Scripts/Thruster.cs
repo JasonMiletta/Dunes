@@ -34,7 +34,7 @@ public class Thruster : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		thrusterHoverUpdate();
 	}
 
